@@ -4,7 +4,7 @@ module.exports = {
   mode: "production",
   entry: ["./src/script.js", "./src/scss/app.scss"],
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "assets"),
     filename: "js/[name].js",
   },
   module: {

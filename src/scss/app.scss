@@ -1,3 +1,53 @@
 @import "~bootswatch/dist/cosmo/variables";
+/* SCSS HEX */
+$oxford-blue: #0d1d3fff;
+$naples-yellow: #f2d95bff;
+$gold-metallic: #d9b449ff;
+$black-bean: #3f0201ff;
+$dark-red: #8b0f0fff;
+
+$theme-colors: (
+  oxford-blue: $oxford-blue,
+  naples-yellow: $naples-yellow,
+  gold-metallic: $gold-metallic,
+  black-bean: $black-bean,
+  dark-red: $dark-red,
+);
+
 @import "~bootstrap/scss/bootstrap";
 @import "~bootswatch/dist/cosmo/bootswatch";
+
+.jumbotron {
+  background: url(../../assets/img/josh-rose-9YQGFzg0RiM-unsplash.jpg) no-repeat
+    center;
+  background-size: cover;
+  min-height: 600px;
+}
+
+.about {
+  p {
+    font-size: 1.3em;
+  }
+  img {
+    border-width: thick !important;
+  }
+}
+
+.contact {
+  i {
+    font-size: 1.2em;
+  }
+}
+
+footer {
+  width: 100%;
+  height: 80px;
+
+  a {
+    color: var(--gold-metallic) !important;
+
+    &:hover {
+      color: var(--naples-yellow) !important;
+    }
+  }
+}
