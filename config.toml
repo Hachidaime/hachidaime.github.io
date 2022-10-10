@@ -11,5 +11,5 @@ enableEmoji = true
   BookLogo = 'logo.png'
   BookSection = 'docs'
   BookRepo = 'https://github.com/alex-shpak/hugo-book'
-  BookDateFormat = 'Jan 2, 2006'
+  BookDateFormat = '2 January 2006'
   BookSearch = true
