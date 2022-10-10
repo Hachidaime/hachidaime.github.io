@@ -1,1 +1,0 @@
-[{"id":0,"href":"/posts/adding-path/","title":"Adding Path on Linux","section":"Blog","content":" Bash export PATH=/directory/to/path:$PATH Fish add_to_path /directory/to/path "}]
