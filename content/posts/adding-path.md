@@ -9,7 +9,7 @@ categories: ["Linux", "Config", "Customize", "Terminal", "Operating System"]
 {{< tabs "uniqueid" >}}
 {{< tab "Bash" >}}
 
-```bash
+```fishshell
 export PATH=/directory/to/path:$PATH
 ```
 
