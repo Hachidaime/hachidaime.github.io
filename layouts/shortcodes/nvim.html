@@ -1,0 +1,14 @@
+{{ $type := .Get 0 }}
+{{ $path := .Get 1 }}
+
+<p>
+  {{ with (eq $type "installPacker")}}
+  Install using packer (place in <code>~/.config/nvim/lua/packer-config/init.lua</code>):
+  {{ end }}
+  {{ with (eq $type "initRequire")}}
+  Require config in <code>~/.config/nvim/init.lua</code>.
+  {{ end }}
+  {{ with (eq $type "config")}}
+  Create config file <code>~/.config/nvim/{{ $path }}</code>:
+  {{ end }}
+</p>
