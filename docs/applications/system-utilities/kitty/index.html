@@ -1,0 +1,660 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Kitty: Terminal Emulator # Installation # sudo dnf install kitty Configuration # Kitty looks config file depend on OS, usually ~/.config/kitty/kitty.conf. Place current line of code on top of config file to set vim fold method.
+# vim:fileencoding=utf-8:foldmethod=marker Place your sections of configs beetween these lines of code to implement vim fold method.
+#: <Section Name> {{{ # Your configs here... #: }}} Fonts # font_family JetBrainsMono Nerd Font Mono bold_font auto italic_font auto bold_italic_font auto font_size 9."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content="Kitty"><meta property="og:description" content="Kitty: Terminal Emulator # Installation # sudo dnf install kitty Configuration # Kitty looks config file depend on OS, usually ~/.config/kitty/kitty.conf. Place current line of code on top of config file to set vim fold method.
+# vim:fileencoding=utf-8:foldmethod=marker Place your sections of configs beetween these lines of code to implement vim fold method.
+#: <Section Name> {{{ # Your configs here... #: }}} Fonts # font_family JetBrainsMono Nerd Font Mono bold_font auto italic_font auto bold_italic_font auto font_size 9."><meta property="og:type" content="article"><meta property="og:url" content="https://hachidaime.github.io/docs/applications/system-utilities/kitty/"><meta property="article:section" content="docs"><title>Kitty | Hachidaime</title><link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.9ea367ff57fd5a61541aa693556edadf43e270838cde2754c2d7fc607ab6d542.css integrity="sha256-nqNn/1f9WmFUGqaTVW7a30PicIOM3idUwtf8YHq21UI=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script>
+<script defer src=/en.search.min.0871a6c9e14b8e76b27a0b2d37da2e606254305df89b64a809212f8e1729553a.js integrity="sha256-CHGmyeFLjnayegstN9ouYGJUMF34m2SoCSEvjhcpVTo=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><img src=/logo.png alt=Logo><span>Hachidaime</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><input type=checkbox id=section-76862aecfb60d3a5e200c6ed0b649d4e class=toggle>
+<label for=section-76862aecfb60d3a5e200c6ed0b649d4e class="flex justify-between"><a role=button>Fedora</a></label><ul><li><a href=/docs/fedora/fedora-setup/>Fedora Setup</a></li></ul></li><li><input type=checkbox id=section-f968e44b046e92fca937aafe0fe389d9 class=toggle checked>
+<label for=section-f968e44b046e92fca937aafe0fe389d9 class="flex justify-between"><a role=button>Applications</a></label><ul><li><input type=checkbox id=section-80bfb9802e70bd1e19d45f06b6b3fb57 class=toggle checked>
+<label for=section-80bfb9802e70bd1e19d45f06b6b3fb57 class="flex justify-between"><a href=/docs/applications/system-utilities/>System Utilities</a></label><ul><li><a href=/docs/applications/system-utilities/kitty/ class=active>Kitty</a></li><li><a href=/docs/applications/system-utilities/fish/>Fish</a></li></ul></li><li><input type=checkbox id=section-2c8d21ab5631b047658c8e0a704313d1 class=toggle>
+<label for=section-2c8d21ab5631b047658c8e0a704313d1 class="flex justify-between"><a href=/docs/applications/text-editor/>Text Editor</a></label><ul><li><a href=/docs/applications/text-editor/neovim/>Neovim</a></li></ul></li><li><a href=/docs/applications/development/>Development</a><ul></ul></li><li><a href=/docs/applications/multimedia/>Multimedia</a><ul></ul></li><li><a href=/docs/applications/office-suite/>Office Suite</a><ul></ul></li></ul></li></ul><ul><li><a href=/posts/>Blog</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
+<strong>Kitty</strong>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#installation>Installation</a></li><li><a href=#configuration>Configuration</a><ul><li><a href=#fonts>Fonts</a></li><li><a href=#cursor-customization>Cursor Customization</a></li><li><a href=#scrollback>Scrollback</a></li><li><a href=#mouse>Mouse</a></li><li><a href=#performance-tuning>Performance Tuning</a></li><li><a href=#terminal-bell>Terminal Bell</a></li><li><a href=#window-layout>Window Layout</a></li><li><a href=#tab-bar>Tab Bar</a></li><li><a href=#color-scheme>Color Scheme</a></li><li><a href=#advanced>Advanced</a></li><li><a href=#os-specific-tweaks>OS Specific Tweaks</a></li><li><a href=#keyboard-shortcuts>Keyboard Shortcuts</a></li><li><a href=#include-theme>Include Theme</a></li></ul></li><li><a href=#color-scheme-1>Color Scheme</a><ul><li><a href=#generate-color-scheme>Generate Color Scheme</a></li></ul></li><li><a href=#tab-bar-1>Tab Bar</a></li><li><a href=#official-website>Official Website</a></li></ul></nav></aside></header><article class=markdown><h1 id=kitty-terminal-emulator>Kitty: Terminal Emulator
+<a class=anchor href=#kitty-terminal-emulator>#</a></h1><h2 id=installation>Installation
+<a class=anchor href=#installation>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fish data-lang=fish><span style=display:flex><span><span style=color:#50fa7b>sudo</span> <span style=color:#50fa7b>dnf</span> install kitty
+</span></span></code></pre></div><h2 id=configuration>Configuration
+<a class=anchor href=#configuration>#</a></h2><blockquote class="book-hint warning">Kitty looks config file depend on OS, usually <code>~/.config/kitty/kitty.conf</code>.</blockquote><p><blockquote class="book-hint info"><p>Place current line of code on top of config file to set vim fold method.</p><pre tabindex=0><code class=language-conf data-lang=conf># vim:fileencoding=utf-8:foldmethod=marker
+</code></pre></blockquote><blockquote class="book-hint info"><p>Place your sections of configs beetween these lines of code to implement vim fold method.</p><pre tabindex=0><code class=language-conf data-lang=conf>#: &lt;Section Name&gt; {{{
+# Your configs here...
+#: }}}
+</code></pre></blockquote></p><h3 id=fonts>Fonts
+<a class=anchor href=#fonts>#</a></h3><details><summary></summary><div class=markdown-inner><pre tabindex=0><code>font_family      JetBrainsMono Nerd Font Mono
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+
+font_size 9.0
+force_ltr no
+disable_ligatures never
+box_drawing_scale 0.001, 1, 1.5, 2
+modify_font cell_height 2px
+</code></pre></div></details><h3 id=cursor-customization>Cursor Customization
+<a class=anchor href=#cursor-customization>#</a></h3><details><summary></summary><div class=markdown-inner><pre tabindex=0><code>cursor_shape underline
+cursor_beam_thickness 1.5
+cursor_underline_thickness 2.0
+
+cursor_blink_interval -1
+cursor_stop_blinking_after 15.0
+</code></pre></div></details><h3 id=scrollback>Scrollback
+<a class=anchor href=#scrollback>#</a></h3><details><summary></summary><div class=markdown-inner><pre tabindex=0><code>scrollback_lines 2000
+scrollback_pager less --chop-long-lines --RAW-CONTROL-CHARS +INPUT_LINE_NUMBER
+scrollback_pager_history_size 0
+scrollback_fill_enlarged_window no
+
+wheel_scroll_multiplier 5.0
+wheel_scroll_min_lines 1
+
+touch_scroll_multiplier 1.0
+</code></pre></div></details><h3 id=mouse>Mouse
+<a class=anchor href=#mouse>#</a></h3><details><summary></summary><div class=markdown-inner><pre tabindex=0><code>mouse_hide_wait 3.0
+url_style curly
+open_url_with default
+url_prefixes file ftp ftps gemini git gopher http https irc ircs kitty mailto news sftp ssh
+detect_urls yes
+
+copy_on_select no
+paste_actions quote-urls-at-prompt
+
+strip_trailing_spaces never
+
+select_by_word_characters @-./_~?&amp;=%+#
+
+click_interval -1.0
+
+focus_follows_mouse no
+
+pointer_shape_when_grabbed arrow
+default_pointer_shape beam
+pointer_shape_when_dragging beam
+</code></pre></div></details><h4 id=mouse-actions>Mouse Actions
+<a class=anchor href=#mouse-actions>#</a></h4><details><summary></summary><div class=markdown-inner><pre tabindex=0><code>clear_all_mouse_actions no
+
+mouse_map left click ungrabbed mouse_handle_click selection link prompt
+mouse_map shift+left click grabbed,ungrabbed mouse_handle_click selection link prompt
+mouse_map ctrl+shift+left release grabbed,ungrabbed mouse_handle_click link
+
+mouse_map ctrl+shift+left press grabbed discard_event
+
+mouse_map middle release ungrabbed paste_from_selection
+mouse_map left press ungrabbed mouse_selection normal
+mouse_map ctrl+alt+left press ungrabbed mouse_selection rectangle
+mouse_map left doublepress ungrabbed mouse_selection word
+mouse_map left triplepress ungrabbed mouse_selection line
+mouse_map ctrl+alt+left triplepress ungrabbed mouse_selection line_from_point
+mouse_map right press ungrabbed mouse_selection extend
+mouse_map shift+middle release ungrabbed,grabbed paste_selection
+mouse_map shift+middle press grabbed discard_event
+mouse_map shift+left press ungrabbed,grabbed mouse_selection normal
+mouse_map ctrl+shift+alt+left press ungrabbed,grabbed mouse_selection rectangle
+mouse_map shift+left doublepress ungrabbed,grabbed mouse_selection word
+mouse_map shift+left triplepress ungrabbed,grabbed mouse_selection line
+mouse_map ctrl+shift+alt+left triplepress ungrabbed,grabbed mouse_selection line_from_point
+mouse_map shift+right press ungrabbed,grabbed mouse_selection extend
+mouse_map ctrl+shift+right press ungrabbed mouse_show_command_output
+</code></pre></div></details><h3 id=performance-tuning>Performance Tuning
+<a class=anchor href=#performance-tuning>#</a></h3><details><summary></summary><div class=markdown-inner><pre tabindex=0><code>repaint_delay 10
+input_delay 3
+
+sync_to_monitor yes
+</code></pre></div></details><h3 id=terminal-bell>Terminal Bell
+<a class=anchor href=#terminal-bell>#</a></h3><details><summary></summary><div class=markdown-inner><pre tabindex=0><code>enable_audio_bell yes
+
+visual_bell_duration 0.0
+
+window_alert_on_bell yes
+
+bell_on_tab &#34;🔔 &#34;
+
+command_on_bell none
+
+bell_path none
+</code></pre></div></details><h3 id=window-layout>Window Layout
+<a class=anchor href=#window-layout>#</a></h3><details><summary></summary><div class=markdown-inner><pre tabindex=0><code>remember_window_size  yes
+initial_window_width  640
+initial_window_height 400
+
+enabled_layouts *
+
+window_resize_step_cells 2
+window_resize_step_lines 2
+
+window_border_width 0.5pt
+draw_minimal_borders yes
+
+window_margin_width 0
+single_window_margin_width -2
+
+window_padding_width 0 8
+
+placement_strategy center
+
+inactive_text_alpha 0.6
+
+hide_window_decorations no
+
+window_logo_path none
+window_logo_position bottom-right
+window_logo_alpha 0.5
+
+resize_debounce_time 0.1
+resize_draw_strategy static
+resize_in_steps no
+
+visual_window_select_characters 1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+confirm_os_window_close -1
+</code></pre></div></details><h3 id=tab-bar>Tab Bar
+<a class=anchor href=#tab-bar>#</a></h3><details><summary></summary><div class=markdown-inner><pre tabindex=0><code>tab_bar_edge top
+tab_bar_margin_width 0.0
+tab_bar_margin_height 0.0 0.0
+tab_bar_style custom
+tab_bar_align left
+tab_bar_min_tabs 2
+
+tab_switch_strategy previous
+
+tab_fade 0.25 0.5 0.75 1
+
+tab_separator &#34; ┇&#34;
+
+tab_powerline_style slanted
+
+tab_activity_symbol none
+
+tab_title_template &#34;{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.tab}{title}&#34;
+
+active_tab_title_template none
+active_tab_font_style   bold-italic
+inactive_tab_font_style normal
+</code></pre></div></details><h3 id=color-scheme>Color Scheme
+<a class=anchor href=#color-scheme>#</a></h3><details><summary></summary><div class=markdown-inner><pre tabindex=0><code>background_opacity 0.92
+
+background_image none
+background_image_layout tiled
+background_image_linear no
+
+dynamic_background_opacity no
+
+background_tint 0.0
+
+dim_opacity 0.75
+</code></pre></div></details><h4 id=color-table>Color Table
+<a class=anchor href=#color-table>#</a></h4><details><summary></summary><div class=markdown-inner><pre tabindex=0><code></code></pre></div></details><h3 id=advanced>Advanced
+<a class=anchor href=#advanced>#</a></h3><details><summary></summary><div class=markdown-inner><pre tabindex=0><code>shell .
+
+editor .
+
+close_on_child_death no
+
+allow_remote_control no
+
+listen_on none
+
+update_check_interval 24
+
+startup_session none
+
+clipboard_control write-clipboard write-primary read-clipboard-ask read-primary-ask
+clipboard_max_size 64
+
+allow_hyperlinks yes
+
+shell_integration no-cursor enabled
+
+allow_cloning ask
+clone_source_strategies venv,conda,env_var,path
+
+term xterm-kitty
+</code></pre></div></details><h3 id=os-specific-tweaks>OS Specific Tweaks
+<a class=anchor href=#os-specific-tweaks>#</a></h3><details><summary></summary><div class=markdown-inner><pre tabindex=0><code>macos_option_as_alt no
+macos_hide_from_tasks no
+macos_quit_when_last_window_closed no
+macos_window_resizable yes
+macos_thicken_font 0
+macos_traditional_fullscreen no
+macos_show_window_title_in all
+macos_menubar_title_max_length 0
+macos_custom_beam_cursor no
+macos_colorspace srgb
+
+linux_display_server auto
+</code></pre></div></details><h3 id=keyboard-shortcuts>Keyboard Shortcuts
+<a class=anchor href=#keyboard-shortcuts>#</a></h3><details><summary></summary><div class=markdown-inner><pre tabindex=0><code>kitty_mod ctrl+shift
+
+clear_all_shortcuts no
+</code></pre></div></details><h4 id=clipboard>Clipboard
+<a class=anchor href=#clipboard>#</a></h4><details><summary></summary><div class=markdown-inner><pre tabindex=0><code>map kitty_mod+c copy_to_clipboard
+map cmd+c       copy_to_clipboard
+
+map kitty_mod+v paste_from_clipboard
+map cmd+v       paste_from_clipboard
+
+map kitty_mod+s  paste_from_selection
+map shift+insert paste_from_selection
+
+map kitty_mod+o pass_selection_to_program
+</code></pre></div></details><h4 id=scrolling>Scrolling
+<a class=anchor href=#scrolling>#</a></h4><details><summary></summary><div class=markdown-inner><pre tabindex=0><code>map kitty_mod+up    scroll_line_up
+map kitty_mod+k     scroll_line_up
+map opt+cmd+page_up scroll_line_up
+map cmd+up          scroll_line_up
+
+map kitty_mod+down    scroll_line_down
+map kitty_mod+j       scroll_line_down
+map opt+cmd+page_down scroll_line_down
+map cmd+down          scroll_line_down
+
+map kitty_mod+page_up scroll_page_up
+map cmd+page_up       scroll_page_up
+
+map kitty_mod+page_down scroll_page_down
+map cmd+page_down       scroll_page_down
+
+map kitty_mod+home scroll_home
+map cmd+home       scroll_home
+
+map kitty_mod+end scroll_end
+map cmd+end       scroll_end
+
+map kitty_mod+z scroll_to_prompt -1
+
+map kitty_mod+x scroll_to_prompt 1
+
+map kitty_mod+h show_scrollback
+
+map kitty_mod+g show_last_command_output
+</code></pre></div></details><h4 id=window-management>Window Management
+<a class=anchor href=#window-management>#</a></h4><details><summary></summary><div class=markdown-inner><pre tabindex=0><code>map kitty_mod+enter new_window
+map cmd+enter       new_window
+
+map kitty_mod+n new_os_window
+map cmd+n       new_os_window
+
+map kitty_mod+w close_window
+map shift+cmd+d close_window
+
+map kitty_mod+] next_window
+
+map kitty_mod+[ previous_window
+
+map kitty_mod+f move_window_forward
+
+map kitty_mod+b move_window_backward
+
+map kitty_mod+` move_window_to_top
+
+map kitty_mod+r start_resizing_window
+map cmd+r       start_resizing_window
+
+map kitty_mod+1 first_window
+map cmd+1       first_window
+
+map kitty_mod+2 second_window
+map cmd+2       second_window
+
+map kitty_mod+3 third_window
+map cmd+3       third_window
+
+map kitty_mod+4 fourth_window
+map cmd+4       fourth_window
+
+map kitty_mod+5 fifth_window
+map cmd+5       fifth_window
+
+map kitty_mod+6 sixth_window
+map cmd+6       sixth_window
+
+map kitty_mod+7 seventh_window
+map cmd+7       seventh_window
+
+map kitty_mod+8 eighth_window
+map cmd+8       eighth_window
+
+map kitty_mod+9 ninth_window
+map cmd+9       ninth_window
+
+map kitty_mod+0 tenth_window
+
+map kitty_mod+f7 focus_visible_window
+
+map kitty_mod+f8 swap_with_window
+
+map shift+up move_window up
+map shift+left move_window left
+map shift+right move_window right
+map shift+down move_window down
+
+map alt+left neighboring_window left
+map alt+right neighboring_window right
+map alt+up neighboring_window up
+map alt+down neighboring_window down
+</code></pre></div></details><h4 id=tab-management>Tab Management
+<a class=anchor href=#tab-management>#</a></h4><details><summary></summary><div class=markdown-inner><pre tabindex=0><code>map shift+cmd+]     next_tab
+map ctrl+tab        next_tab
+map ctrl+page_down  next_tab
+
+map shift+cmd+[    previous_tab
+map ctrl+shift+tab previous_tab
+map ctrl+page_up   previous_tab
+
+map kitty_mod+t new_tab
+map cmd+t       new_tab
+
+map kitty_mod+q close_tab
+map cmd+w       close_tab
+
+map shift+cmd+w close_os_window
+
+map kitty_mod+. move_tab_forward
+
+map kitty_mod+, move_tab_backward
+
+map kitty_mod+alt+t set_tab_title
+map shift+cmd+i     set_tab_title
+</code></pre></div></details><h4 id=layout-management>Layout Management
+<a class=anchor href=#layout-management>#</a></h4><details><summary></summary><div class=markdown-inner><pre tabindex=0><code>map kitty_mod+l next_layout
+
+map kitty_mod+left resize_window narrower
+map kitty_mod+right resize_window wider
+map kitty_mod+up resize_window taller
+map kitty_mod+down resize_window shorter 3
+
+map ctrl+home resize_window reset
+</code></pre></div></details><h4 id=font-sizes>Font Sizes
+<a class=anchor href=#font-sizes>#</a></h4><details><summary></summary><div class=markdown-inner><pre tabindex=0><code>map kitty_mod+equal  change_font_size all +2.0
+map kitty_mod+plus   change_font_size all +2.0
+map kitty_mod+kp_add change_font_size all +2.0
+map cmd+plus         change_font_size all +2.0
+map cmd+equal        change_font_size all +2.0
+map shift+cmd+equal  change_font_size all +2.0
+
+map kitty_mod+minus       change_font_size all -2.0
+map kitty_mod+kp_subtract change_font_size all -2.0
+map cmd+minus             change_font_size all -2.0
+map shift+cmd+minus       change_font_size all -2.0
+
+map kitty_mod+backspace change_font_size all 0
+map cmd+0               change_font_size all 0
+</code></pre></div></details><h4 id=select-and-act-on-visible-text>Select and Act on Visible Text
+<a class=anchor href=#select-and-act-on-visible-text>#</a></h4><details><summary></summary><div class=markdown-inner><pre tabindex=0><code>map kitty_mod+e open_url_with_hints
+
+map kitty_mod+p&gt;f kitten hints --type path --program -
+
+map kitty_mod+p&gt;shift+f kitten hints --type path
+
+map kitty_mod+p&gt;l kitten hints --type line --program -
+map kitty_mod+p&gt;w kitten hints --type word --program -
+map kitty_mod+p&gt;h kitten hints --type hash --program -
+
+map kitty_mod+p&gt;n kitten hints --type linenum
+map kitty_mod+p&gt;y kitten hints --type hyperlink
+</code></pre></div></details><h4 id=miscellaneous>Miscellaneous
+<a class=anchor href=#miscellaneous>#</a></h4><details><summary></summary><div class=markdown-inner><pre tabindex=0><code>map kitty_mod+f1 show_kitty_doc overview
+
+map kitty_mod+f11 toggle_fullscreen
+map ctrl+cmd+f    toggle_fullscreen
+
+map kitty_mod+f10 toggle_maximized
+map opt+cmd+s toggle_macos_secure_keyboard_entry
+
+map kitty_mod+u    kitten unicode_input
+map ctrl+cmd+space kitten unicode_input
+
+map kitty_mod+f2 edit_config_file
+map cmd+,        edit_config_file
+
+map kitty_mod+escape kitty_shell window
+
+map kitty_mod+a&gt;m set_background_opacity +0.1
+map kitty_mod+a&gt;l set_background_opacity -0.1
+map kitty_mod+a&gt;1 set_background_opacity 1
+map kitty_mod+a&gt;d set_background_opacity default
+
+map kitty_mod+delete clear_terminal reset active
+map opt+cmd+r        clear_terminal reset active
+
+map cmd+k clear_terminal to_cursor active
+
+map kitty_mod+f5 load_config_file
+map ctrl+cmd+,   load_config_file
+
+map kitty_mod+f6 debug_config
+map opt+cmd+,    debug_config
+map shift+cmd+/ open_url https://sw.kovidgoyal.net/kitty/
+</code></pre></div></details><h3 id=include-theme>Include Theme
+<a class=anchor href=#include-theme>#</a></h3><details><summary></summary><div class=markdown-inner><pre tabindex=0><code>include current-theme.conf
+</code></pre></div></details><h2 id=color-scheme-1>Color Scheme
+<a class=anchor href=#color-scheme-1>#</a></h2><blockquote class="book-hint warning">You can set color scheme configuration in <code>Color Table</code> section on config file (<code>~/.config/kitty/kitty.conf</code>). But for better files management, place it in separated file (<code>~/.config/kitty/current-theme.conf</code>).</blockquote><details><summary></summary><div class=markdown-inner><pre tabindex=0><code>background #1c262b
+foreground #c1c8d6
+cursor #b2b8c3
+selection_background #6dc1b8
+color0 #000000
+color8 #767676
+color1 #ee2a29
+color9 #dc5b60
+color2 #3fa33f
+color10 #70be71
+color3 #fee92e
+color11 #fef063
+color4 #1d80ef
+color12 #53a4f3
+color5 #8800a0
+color13 #a94dbb
+color6 #16aec9
+color14 #42c6d9
+color7 #a4a4a4
+color15 #fffefe
+selection_foreground #1c262b
+</code></pre></div></details><h3 id=generate-color-scheme>Generate Color Scheme
+<a class=anchor href=#generate-color-scheme>#</a></h3><p>You can generate color scheme from repository.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fish data-lang=fish><span style=display:flex><span><span style=color:#50fa7b>kitty</span> +kitten themes
+</span></span></code></pre></div><p>Then select the theme you want.</p><h2 id=tab-bar-1>Tab Bar
+<a class=anchor href=#tab-bar-1>#</a></h2><blockquote class="book-hint warning">If you set <code>tab_bar_style custom</code>, you must create tab_bar configuration file (<code>~/.config/kitty/tab_bar.py</code>).</blockquote><details><summary></summary><div class=markdown-inner><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#6272a4># pyright: reportMissingImports=false</span>
+</span></span><span style=display:flex><span><span style=color:#ff79c6>from</span> datetime <span style=color:#ff79c6>import</span> datetime
+</span></span><span style=display:flex><span><span style=color:#ff79c6>from</span> kitty.boss <span style=color:#ff79c6>import</span> get_boss
+</span></span><span style=display:flex><span><span style=color:#ff79c6>from</span> kitty.fast_data_types <span style=color:#ff79c6>import</span> Screen, add_timer, get_options
+</span></span><span style=display:flex><span><span style=color:#ff79c6>from</span> kitty.utils <span style=color:#ff79c6>import</span> color_as_int
+</span></span><span style=display:flex><span><span style=color:#ff79c6>from</span> kitty.tab_bar <span style=color:#ff79c6>import</span> (
+</span></span><span style=display:flex><span>    DrawData,
+</span></span><span style=display:flex><span>    ExtraData,
+</span></span><span style=display:flex><span>    Formatter,
+</span></span><span style=display:flex><span>    TabBarData,
+</span></span><span style=display:flex><span>    as_rgb,
+</span></span><span style=display:flex><span>    draw_attributed_string,
+</span></span><span style=display:flex><span>    draw_title,
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>opts <span style=color:#ff79c6>=</span> get_options()
+</span></span><span style=display:flex><span>icon_fg <span style=color:#ff79c6>=</span> as_rgb(color_as_int(opts<span style=color:#ff79c6>.</span>color10))
+</span></span><span style=display:flex><span>icon_bg <span style=color:#ff79c6>=</span> as_rgb(color_as_int(opts<span style=color:#ff79c6>.</span>color0))
+</span></span><span style=display:flex><span>bat_text_color <span style=color:#ff79c6>=</span> as_rgb(color_as_int(opts<span style=color:#ff79c6>.</span>color15))
+</span></span><span style=display:flex><span>clock_color <span style=color:#ff79c6>=</span> as_rgb(color_as_int(opts<span style=color:#ff79c6>.</span>color13))
+</span></span><span style=display:flex><span>date_color <span style=color:#ff79c6>=</span> as_rgb(color_as_int(opts<span style=color:#ff79c6>.</span>color14))
+</span></span><span style=display:flex><span>SEPARATOR_SYMBOL, SOFT_SEPARATOR_SYMBOL <span style=color:#ff79c6>=</span> (<span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>\ue0bc</span><span style=color:#f1fa8c>&#34;</span>, <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>\ue0bd</span><span style=color:#f1fa8c>&#34;</span>)
+</span></span><span style=display:flex><span>RIGHT_MARGIN <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>1</span>
+</span></span><span style=display:flex><span>REFRESH_TIME <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>1</span>
+</span></span><span style=display:flex><span>ICON <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34; </span><span style=color:#f1fa8c>\ue272</span><span style=color:#f1fa8c> &#34;</span>
+</span></span><span style=display:flex><span>UNPLUGGED_ICONS <span style=color:#ff79c6>=</span> {
+</span></span><span style=display:flex><span>    <span style=color:#bd93f9>10</span>: <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>\uf579</span><span style=color:#f1fa8c>&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#bd93f9>20</span>: <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>\uf57a</span><span style=color:#f1fa8c>&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#bd93f9>30</span>: <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>\uf57b</span><span style=color:#f1fa8c>&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#bd93f9>40</span>: <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>\uf57c</span><span style=color:#f1fa8c>&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#bd93f9>50</span>: <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>\uf57d</span><span style=color:#f1fa8c>&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#bd93f9>60</span>: <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>\uf57e</span><span style=color:#f1fa8c>&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#bd93f9>70</span>: <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>\uf57f</span><span style=color:#f1fa8c>&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#bd93f9>80</span>: <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>\uf580</span><span style=color:#f1fa8c>&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#bd93f9>90</span>: <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>\uf581</span><span style=color:#f1fa8c>&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#bd93f9>100</span>: <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>\uf578</span><span style=color:#f1fa8c>&#34;</span>,
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>PLUGGED_ICONS <span style=color:#ff79c6>=</span> {
+</span></span><span style=display:flex><span>    <span style=color:#bd93f9>1</span>: <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>\uf583</span><span style=color:#f1fa8c>&#34;</span>,
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>UNPLUGGED_COLORS <span style=color:#ff79c6>=</span> {
+</span></span><span style=display:flex><span>    <span style=color:#bd93f9>15</span>: as_rgb(color_as_int(opts<span style=color:#ff79c6>.</span>color1)),
+</span></span><span style=display:flex><span>    <span style=color:#bd93f9>16</span>: as_rgb(color_as_int(opts<span style=color:#ff79c6>.</span>color15)),
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>PLUGGED_COLORS <span style=color:#ff79c6>=</span> {
+</span></span><span style=display:flex><span>    <span style=color:#bd93f9>15</span>: as_rgb(color_as_int(opts<span style=color:#ff79c6>.</span>color1)),
+</span></span><span style=display:flex><span>    <span style=color:#bd93f9>16</span>: as_rgb(color_as_int(opts<span style=color:#ff79c6>.</span>color6)),
+</span></span><span style=display:flex><span>    <span style=color:#bd93f9>99</span>: as_rgb(color_as_int(opts<span style=color:#ff79c6>.</span>color6)),
+</span></span><span style=display:flex><span>    <span style=color:#bd93f9>100</span>: as_rgb(color_as_int(opts<span style=color:#ff79c6>.</span>color2)),
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>_draw_icon</span>(screen: Screen, index: <span style=color:#8be9fd;font-style:italic>int</span>) <span style=color:#ff79c6>-&gt;</span> <span style=color:#8be9fd;font-style:italic>int</span>:
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>if</span> index <span style=color:#ff79c6>!=</span> <span style=color:#bd93f9>1</span>:
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>return</span> <span style=color:#bd93f9>0</span>
+</span></span><span style=display:flex><span>    fg, bg <span style=color:#ff79c6>=</span> screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>fg, screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>bg
+</span></span><span style=display:flex><span>    screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>fg <span style=color:#ff79c6>=</span> icon_fg
+</span></span><span style=display:flex><span>    screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>bg <span style=color:#ff79c6>=</span> icon_bg
+</span></span><span style=display:flex><span>    screen<span style=color:#ff79c6>.</span>draw(ICON)
+</span></span><span style=display:flex><span>    screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>fg, screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>bg <span style=color:#ff79c6>=</span> fg, bg
+</span></span><span style=display:flex><span>    screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>x <span style=color:#ff79c6>=</span> <span style=color:#8be9fd;font-style:italic>len</span>(ICON)
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>return</span> screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>x
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>_draw_left_status</span>(
+</span></span><span style=display:flex><span>    draw_data: DrawData,
+</span></span><span style=display:flex><span>    screen: Screen,
+</span></span><span style=display:flex><span>    tab: TabBarData,
+</span></span><span style=display:flex><span>    before: <span style=color:#8be9fd;font-style:italic>int</span>,
+</span></span><span style=display:flex><span>    max_title_length: <span style=color:#8be9fd;font-style:italic>int</span>,
+</span></span><span style=display:flex><span>    index: <span style=color:#8be9fd;font-style:italic>int</span>,
+</span></span><span style=display:flex><span>    is_last: <span style=color:#8be9fd;font-style:italic>bool</span>,
+</span></span><span style=display:flex><span>    extra_data: ExtraData,
+</span></span><span style=display:flex><span>) <span style=color:#ff79c6>-&gt;</span> <span style=color:#8be9fd;font-style:italic>int</span>:
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>if</span> screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>x <span style=color:#ff79c6>&gt;=</span> screen<span style=color:#ff79c6>.</span>columns <span style=color:#ff79c6>-</span> right_status_length:
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>return</span> screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>x
+</span></span><span style=display:flex><span>    tab_bg <span style=color:#ff79c6>=</span> screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>bg
+</span></span><span style=display:flex><span>    tab_fg <span style=color:#ff79c6>=</span> screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>fg
+</span></span><span style=display:flex><span>    default_bg <span style=color:#ff79c6>=</span> as_rgb(<span style=color:#8be9fd;font-style:italic>int</span>(draw_data<span style=color:#ff79c6>.</span>default_bg))
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>if</span> extra_data<span style=color:#ff79c6>.</span>next_tab:
+</span></span><span style=display:flex><span>        next_tab_bg <span style=color:#ff79c6>=</span> as_rgb(draw_data<span style=color:#ff79c6>.</span>tab_bg(extra_data<span style=color:#ff79c6>.</span>next_tab))
+</span></span><span style=display:flex><span>        needs_soft_separator <span style=color:#ff79c6>=</span> next_tab_bg <span style=color:#ff79c6>==</span> tab_bg
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>else</span>:
+</span></span><span style=display:flex><span>        next_tab_bg <span style=color:#ff79c6>=</span> default_bg
+</span></span><span style=display:flex><span>        needs_soft_separator <span style=color:#ff79c6>=</span> <span style=color:#ff79c6>False</span>
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>if</span> screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>x <span style=color:#ff79c6>&lt;=</span> <span style=color:#8be9fd;font-style:italic>len</span>(ICON):
+</span></span><span style=display:flex><span>        screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>x <span style=color:#ff79c6>=</span> <span style=color:#8be9fd;font-style:italic>len</span>(ICON)
+</span></span><span style=display:flex><span>    screen<span style=color:#ff79c6>.</span>draw(<span style=color:#f1fa8c>&#34; &#34;</span>)
+</span></span><span style=display:flex><span>    screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>bg <span style=color:#ff79c6>=</span> tab_bg
+</span></span><span style=display:flex><span>    draw_title(draw_data, screen, tab, index)
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>if</span> <span style=color:#ff79c6>not</span> needs_soft_separator:
+</span></span><span style=display:flex><span>        screen<span style=color:#ff79c6>.</span>draw(<span style=color:#f1fa8c>&#34; &#34;</span>)
+</span></span><span style=display:flex><span>        screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>fg <span style=color:#ff79c6>=</span> tab_bg
+</span></span><span style=display:flex><span>        screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>bg <span style=color:#ff79c6>=</span> next_tab_bg
+</span></span><span style=display:flex><span>        screen<span style=color:#ff79c6>.</span>draw(SEPARATOR_SYMBOL)
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>else</span>:
+</span></span><span style=display:flex><span>        prev_fg <span style=color:#ff79c6>=</span> screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>fg
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>if</span> tab_bg <span style=color:#ff79c6>==</span> tab_fg:
+</span></span><span style=display:flex><span>            screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>fg <span style=color:#ff79c6>=</span> default_bg
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>elif</span> tab_bg <span style=color:#ff79c6>!=</span> default_bg:
+</span></span><span style=display:flex><span>            c1 <span style=color:#ff79c6>=</span> draw_data<span style=color:#ff79c6>.</span>inactive_bg<span style=color:#ff79c6>.</span>contrast(draw_data<span style=color:#ff79c6>.</span>default_bg)
+</span></span><span style=display:flex><span>            c2 <span style=color:#ff79c6>=</span> draw_data<span style=color:#ff79c6>.</span>inactive_bg<span style=color:#ff79c6>.</span>contrast(draw_data<span style=color:#ff79c6>.</span>inactive_fg)
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>if</span> c1 <span style=color:#ff79c6>&lt;</span> c2:
+</span></span><span style=display:flex><span>                screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>fg <span style=color:#ff79c6>=</span> default_bg
+</span></span><span style=display:flex><span>        screen<span style=color:#ff79c6>.</span>draw(<span style=color:#f1fa8c>&#34; &#34;</span> <span style=color:#ff79c6>+</span> SOFT_SEPARATOR_SYMBOL)
+</span></span><span style=display:flex><span>        screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>fg <span style=color:#ff79c6>=</span> prev_fg
+</span></span><span style=display:flex><span>    end <span style=color:#ff79c6>=</span> screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>x
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>return</span> end
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>_draw_right_status</span>(screen: Screen, is_last: <span style=color:#8be9fd;font-style:italic>bool</span>, cells: <span style=color:#8be9fd;font-style:italic>list</span>) <span style=color:#ff79c6>-&gt;</span> <span style=color:#8be9fd;font-style:italic>int</span>:
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>if</span> <span style=color:#ff79c6>not</span> is_last:
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>return</span> <span style=color:#bd93f9>0</span>
+</span></span><span style=display:flex><span>    draw_attributed_string(Formatter<span style=color:#ff79c6>.</span>reset, screen)
+</span></span><span style=display:flex><span>    screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>x <span style=color:#ff79c6>=</span> screen<span style=color:#ff79c6>.</span>columns <span style=color:#ff79c6>-</span> right_status_length
+</span></span><span style=display:flex><span>    screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>fg <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>0</span>
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>for</span> color, status <span style=color:#ff79c6>in</span> cells:
+</span></span><span style=display:flex><span>        screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>fg <span style=color:#ff79c6>=</span> color
+</span></span><span style=display:flex><span>        screen<span style=color:#ff79c6>.</span>draw(status)
+</span></span><span style=display:flex><span>    screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>bg <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>0</span>
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>return</span> screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>x
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>_redraw_tab_bar</span>(_):
+</span></span><span style=display:flex><span>    tm <span style=color:#ff79c6>=</span> get_boss()<span style=color:#ff79c6>.</span>active_tab_manager
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>if</span> tm <span style=color:#ff79c6>is</span> <span style=color:#ff79c6>not</span> <span style=color:#ff79c6>None</span>:
+</span></span><span style=display:flex><span>        tm<span style=color:#ff79c6>.</span>mark_tab_bar_dirty()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>get_battery_cells</span>() <span style=color:#ff79c6>-&gt;</span> <span style=color:#8be9fd;font-style:italic>list</span>:
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>try</span>:
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>with</span> <span style=color:#8be9fd;font-style:italic>open</span>(<span style=color:#f1fa8c>&#34;/sys/class/power_supply/BAT0/status&#34;</span>, <span style=color:#f1fa8c>&#34;r&#34;</span>) <span style=color:#ff79c6>as</span> f:
+</span></span><span style=display:flex><span>            status <span style=color:#ff79c6>=</span> f<span style=color:#ff79c6>.</span>read()
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>with</span> <span style=color:#8be9fd;font-style:italic>open</span>(<span style=color:#f1fa8c>&#34;/sys/class/power_supply/BAT0/capacity&#34;</span>, <span style=color:#f1fa8c>&#34;r&#34;</span>) <span style=color:#ff79c6>as</span> f:
+</span></span><span style=display:flex><span>            percent <span style=color:#ff79c6>=</span> <span style=color:#8be9fd;font-style:italic>int</span>(f<span style=color:#ff79c6>.</span>read())
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>if</span> status <span style=color:#ff79c6>==</span> <span style=color:#f1fa8c>&#34;Discharging</span><span style=color:#f1fa8c>\n</span><span style=color:#f1fa8c>&#34;</span>:
+</span></span><span style=display:flex><span>            <span style=color:#6272a4># TODO: declare the lambda once and don&#39;t repeat the code</span>
+</span></span><span style=display:flex><span>            icon_color <span style=color:#ff79c6>=</span> UNPLUGGED_COLORS[
+</span></span><span style=display:flex><span>                <span style=color:#8be9fd;font-style:italic>min</span>(UNPLUGGED_COLORS<span style=color:#ff79c6>.</span>keys(), key<span style=color:#ff79c6>=</span><span style=color:#ff79c6>lambda</span> x: <span style=color:#8be9fd;font-style:italic>abs</span>(x <span style=color:#ff79c6>-</span> percent))
+</span></span><span style=display:flex><span>            ]
+</span></span><span style=display:flex><span>            icon <span style=color:#ff79c6>=</span> UNPLUGGED_ICONS[
+</span></span><span style=display:flex><span>                <span style=color:#8be9fd;font-style:italic>min</span>(UNPLUGGED_ICONS<span style=color:#ff79c6>.</span>keys(), key<span style=color:#ff79c6>=</span><span style=color:#ff79c6>lambda</span> x: <span style=color:#8be9fd;font-style:italic>abs</span>(x <span style=color:#ff79c6>-</span> percent))
+</span></span><span style=display:flex><span>            ]
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>elif</span> status <span style=color:#ff79c6>==</span> <span style=color:#f1fa8c>&#34;Not charging</span><span style=color:#f1fa8c>\n</span><span style=color:#f1fa8c>&#34;</span>:
+</span></span><span style=display:flex><span>            icon_color <span style=color:#ff79c6>=</span> UNPLUGGED_COLORS[
+</span></span><span style=display:flex><span>                <span style=color:#8be9fd;font-style:italic>min</span>(UNPLUGGED_COLORS<span style=color:#ff79c6>.</span>keys(), key<span style=color:#ff79c6>=</span><span style=color:#ff79c6>lambda</span> x: <span style=color:#8be9fd;font-style:italic>abs</span>(x <span style=color:#ff79c6>-</span> percent))
+</span></span><span style=display:flex><span>            ]
+</span></span><span style=display:flex><span>            icon <span style=color:#ff79c6>=</span> PLUGGED_ICONS[
+</span></span><span style=display:flex><span>                <span style=color:#8be9fd;font-style:italic>min</span>(PLUGGED_ICONS<span style=color:#ff79c6>.</span>keys(), key<span style=color:#ff79c6>=</span><span style=color:#ff79c6>lambda</span> x: <span style=color:#8be9fd;font-style:italic>abs</span>(x <span style=color:#ff79c6>-</span> percent))
+</span></span><span style=display:flex><span>            ]
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>else</span>:
+</span></span><span style=display:flex><span>            icon_color <span style=color:#ff79c6>=</span> PLUGGED_COLORS[
+</span></span><span style=display:flex><span>                <span style=color:#8be9fd;font-style:italic>min</span>(PLUGGED_COLORS<span style=color:#ff79c6>.</span>keys(), key<span style=color:#ff79c6>=</span><span style=color:#ff79c6>lambda</span> x: <span style=color:#8be9fd;font-style:italic>abs</span>(x <span style=color:#ff79c6>-</span> percent))
+</span></span><span style=display:flex><span>            ]
+</span></span><span style=display:flex><span>            icon <span style=color:#ff79c6>=</span> PLUGGED_ICONS[
+</span></span><span style=display:flex><span>                <span style=color:#8be9fd;font-style:italic>min</span>(PLUGGED_ICONS<span style=color:#ff79c6>.</span>keys(), key<span style=color:#ff79c6>=</span><span style=color:#ff79c6>lambda</span> x: <span style=color:#8be9fd;font-style:italic>abs</span>(x <span style=color:#ff79c6>-</span> percent))
+</span></span><span style=display:flex><span>            ]
+</span></span><span style=display:flex><span>        percent_cell <span style=color:#ff79c6>=</span> (bat_text_color, <span style=color:#8be9fd;font-style:italic>str</span>(percent) <span style=color:#ff79c6>+</span> <span style=color:#f1fa8c>&#34;% &#34;</span>)
+</span></span><span style=display:flex><span>        icon_cell <span style=color:#ff79c6>=</span> (icon_color, icon)
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>return</span> [percent_cell, icon_cell]
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>except</span> FileNotFoundError:
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>return</span> []
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>timer_id <span style=color:#ff79c6>=</span> <span style=color:#ff79c6>None</span>
+</span></span><span style=display:flex><span>right_status_length <span style=color:#ff79c6>=</span> <span style=color:#ff79c6>-</span><span style=color:#bd93f9>1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ff79c6>def</span> <span style=color:#50fa7b>draw_tab</span>(
+</span></span><span style=display:flex><span>    draw_data: DrawData,
+</span></span><span style=display:flex><span>    screen: Screen,
+</span></span><span style=display:flex><span>    tab: TabBarData,
+</span></span><span style=display:flex><span>    before: <span style=color:#8be9fd;font-style:italic>int</span>,
+</span></span><span style=display:flex><span>    max_title_length: <span style=color:#8be9fd;font-style:italic>int</span>,
+</span></span><span style=display:flex><span>    index: <span style=color:#8be9fd;font-style:italic>int</span>,
+</span></span><span style=display:flex><span>    is_last: <span style=color:#8be9fd;font-style:italic>bool</span>,
+</span></span><span style=display:flex><span>    extra_data: ExtraData,
+</span></span><span style=display:flex><span>) <span style=color:#ff79c6>-&gt;</span> <span style=color:#8be9fd;font-style:italic>int</span>:
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>global</span> timer_id
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>global</span> right_status_length
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>if</span> timer_id <span style=color:#ff79c6>is</span> <span style=color:#ff79c6>None</span>:
+</span></span><span style=display:flex><span>        timer_id <span style=color:#ff79c6>=</span> add_timer(_redraw_tab_bar, REFRESH_TIME, <span style=color:#ff79c6>True</span>)
+</span></span><span style=display:flex><span>    clock <span style=color:#ff79c6>=</span> datetime<span style=color:#ff79c6>.</span>now()<span style=color:#ff79c6>.</span>strftime(<span style=color:#f1fa8c>&#34; %H:%M&#34;</span>)
+</span></span><span style=display:flex><span>    date <span style=color:#ff79c6>=</span> datetime<span style=color:#ff79c6>.</span>now()<span style=color:#ff79c6>.</span>strftime(<span style=color:#f1fa8c>&#34; </span><span style=color:#f1fa8c>%d</span><span style=color:#f1fa8c>.%m.%Y&#34;</span>)
+</span></span><span style=display:flex><span>    cells <span style=color:#ff79c6>=</span> get_battery_cells()
+</span></span><span style=display:flex><span>    cells<span style=color:#ff79c6>.</span>append((clock_color, clock))
+</span></span><span style=display:flex><span>    cells<span style=color:#ff79c6>.</span>append((date_color, date))
+</span></span><span style=display:flex><span>    right_status_length <span style=color:#ff79c6>=</span> RIGHT_MARGIN
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>for</span> cell <span style=color:#ff79c6>in</span> cells:
+</span></span><span style=display:flex><span>        right_status_length <span style=color:#ff79c6>+=</span> <span style=color:#8be9fd;font-style:italic>len</span>(<span style=color:#8be9fd;font-style:italic>str</span>(cell[<span style=color:#bd93f9>1</span>]))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    _draw_icon(screen, index)
+</span></span><span style=display:flex><span>    _draw_left_status(
+</span></span><span style=display:flex><span>        draw_data,
+</span></span><span style=display:flex><span>        screen,
+</span></span><span style=display:flex><span>        tab,
+</span></span><span style=display:flex><span>        before,
+</span></span><span style=display:flex><span>        max_title_length,
+</span></span><span style=display:flex><span>        index,
+</span></span><span style=display:flex><span>        is_last,
+</span></span><span style=display:flex><span>        extra_data,
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>    _draw_right_status(
+</span></span><span style=display:flex><span>        screen,
+</span></span><span style=display:flex><span>        is_last,
+</span></span><span style=display:flex><span>        cells,
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>return</span> screen<span style=color:#ff79c6>.</span>cursor<span style=color:#ff79c6>.</span>x
+</span></span></code></pre></div></div></details><h2 id=official-website>Official Website
+<a class=anchor href=#official-website>#</a></h2><p><a href=https://sw.kovidgoyal.net/kitty/>https://sw.kovidgoyal.net/kitty/</a></p></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#installation>Installation</a></li><li><a href=#configuration>Configuration</a><ul><li><a href=#fonts>Fonts</a></li><li><a href=#cursor-customization>Cursor Customization</a></li><li><a href=#scrollback>Scrollback</a></li><li><a href=#mouse>Mouse</a></li><li><a href=#performance-tuning>Performance Tuning</a></li><li><a href=#terminal-bell>Terminal Bell</a></li><li><a href=#window-layout>Window Layout</a></li><li><a href=#tab-bar>Tab Bar</a></li><li><a href=#color-scheme>Color Scheme</a></li><li><a href=#advanced>Advanced</a></li><li><a href=#os-specific-tweaks>OS Specific Tweaks</a></li><li><a href=#keyboard-shortcuts>Keyboard Shortcuts</a></li><li><a href=#include-theme>Include Theme</a></li></ul></li><li><a href=#color-scheme-1>Color Scheme</a><ul><li><a href=#generate-color-scheme>Generate Color Scheme</a></li></ul></li><li><a href=#tab-bar-1>Tab Bar</a></li><li><a href=#official-website>Official Website</a></li></ul></nav></div></aside></main></body></html>
