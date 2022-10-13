@@ -18,13 +18,19 @@ jobs:
           submodules: true
           fetch-depth: 0
 
+      - name: Setup Node Version
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
       - name: Setup Hugo
-        uses: warpnet/hugo-extended@v2
+        uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "latest"
+          extended: true
 
       - name: Build site with Hugo
-        run: hugo --extended --minify
+        run: hugo --minify
 
       - name: Check HTML
         uses: chabad360/htmlproofer@master
