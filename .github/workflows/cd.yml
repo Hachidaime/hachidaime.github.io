@@ -24,7 +24,7 @@ jobs:
           hugo-version: "latest"
 
       - name: Build site with Hugo
-        run: hugo --minify
+        run: hugo --extended --minify
 
       - name: Check HTML
         uses: chabad360/htmlproofer@master
