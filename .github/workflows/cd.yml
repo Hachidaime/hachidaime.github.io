@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Hugo
-        uses: warpnet/hugo-extended
+        uses: warpnet/hugo-extended@v2
         with:
           hugo-version: "latest"
 
