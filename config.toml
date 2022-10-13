@@ -10,6 +10,10 @@ enableEmoji = true
   BookToC = true
   BookLogo = 'logo.png'
   BookSection = 'docs'
-  BookRepo = 'https://github.com/alex-shpak/hugo-book'
   BookDateFormat = '2 January 2006'
+  BookRepo = 'https://github.com/alex-shpak/hugo-book'
   BookSearch = true
+
+[markup]
+  [markup.highlight]
+    style = 'dracula'
