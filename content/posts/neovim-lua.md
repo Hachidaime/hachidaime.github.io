@@ -6,8 +6,6 @@ tags: ["neovim", "open source", "text editor", "vim"]
 categories: ["Neovim", "Config", "Customize", "Terminal", "Text Editor"]
 ---
 
-# Neovim Configuration with Lua
-
 {{< hint "warning" >}}
 Neovim looks config file depend on OS, usually `~/.config/nvim/init.lua`.
 {{< /hint >}}
