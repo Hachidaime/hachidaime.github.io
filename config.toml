@@ -4,6 +4,7 @@ title = 'Hachidaime'
 
 theme = 'hugo-book'
 enableEmoji = true
+summaryLength = 20
 
 [params]
   BookTheme = 'dark'
